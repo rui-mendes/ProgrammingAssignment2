@@ -1,10 +1,53 @@
-## Put comments here that give an overall description of what your
-## functions do
+## R Programming
+## Rui Mendes (ruidamendes@ua.pt)
+## Assigment 2
+## December 2014
 
-## Write a short comment describing this function
+## Goal: write a pair of functions that cache the inverse of a matrix
 
+## This function creates a special "matrix" object that can cache its inverse.
+## Stores the given matrix and calculate several methods with information about the matrix itself ans his inverse
 makeCacheMatrix <- function(x = matrix()) {
-
+    
+    ## Methods of the list: 
+    #   - setMatrix = stores the matrix
+    #   - getMatrix - returns the matrix
+    #   - setInverseMatrix = stores the inverse matrix
+    #   - getInverseMatrix = returns the inverse matrix
+    
+    ## Construct command (set inverse matrix to null)
+    inverse <- NULL
+    
+    ## Function to store the matrix (to variable m)
+    ## Note: the inverse matrix has not been calculated yet
+    setMatrix <- function(matrix)
+    {
+      x <<- matrix
+      inverse <<- NULL
+    }
+    
+    ## Function to return the matrix itself (return x)
+    getMatrix <- function() {
+      x
+    }
+    
+    ## Function to store the inverse matrix (to inverse variable)
+    setInverseMatrix <- function(inverseMatrix) {
+      inverse <<- inverseMatrix #(using cache feature)
+    } 
+    
+    ## Function to return the inverse matrix (inverse variable)
+    getInverseMatrix <- function() {
+      inverse
+    }
+    
+    ## List that contains the functions (getters and setters) of the matrix and inverse matrix
+    list(
+      setMatrix = setMatrix,
+      getMatrix = getMatrix,
+      setInverseMatrix = setInverseMatrix,
+      getInverseMatrix = getInverseMatrix
+    )
 }
 
 
