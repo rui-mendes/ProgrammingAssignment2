@@ -73,3 +73,15 @@ cacheSolve <- function(x, ...) {
     ## Return the inverse matrix
     inverse
 }
+
+## Example to test (from the course forum):
+## source("ProgrammingAssignment2/cachematrix.R")
+## set.seed(77)
+## m <- matrix(sample.int(100,size=9,replace=TRUE), nrow=3)
+## d <- makeCacheMatrix(m)
+## cacheSolve(d)
+##         [,1]        [,2]        [,3]
+## [1,]  0.005466809 -0.02690806  0.03187788
+## [2,]  0.058413206 -0.10244941  0.06464324
+## [3,] -0.055484558  0.12374867 -0.08328009
+## 
